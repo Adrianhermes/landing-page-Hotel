@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #141414;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  height: 2000px;
+}
+
+/* Barra de Cima */
+
+.banner {
+  background-image: url(img/hotel-praia.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1000px;
+}
+
+.navbar {
+  color: #fff;
+  font-size: 10px;
+}
+
+.container-navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logo-navbar {
+  width: 135px;
+  height: 28px;
+}
+
+.navbar .container-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+  width: 100px;
+  height: 41;
+  top: -10px;
+  left: 255.46px;
+  opacity: 1;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+  color: #c19b76;
+  transition: 0.8s;
+}
+
+/* Box Shadow centroal */
+
+.container-reserva {
+  position: relative;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1146px;
+  background-color: #fff;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  background-color: rgba(193, 155, 118, 1);
+}
+
+.reserva-list {
+  display: flex;
+  padding-left: 120px;
+  align-items: end;
+  gap: 22px;
+}
+
+.input-grupo {
+  display: flex;
+  border: none;
+}
+
+.input-grupo input {
+  width: 100px;
+  height: 38px;
+  border: none;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 13px;
+  padding: 10px 10px 10px 0;
+  ;
+
+}
+
+.input-grupo input:focus {
+  outline: none;
+}
+
+.seta {
+  color: black;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  font-size: 16px;
+  border: none;
+  width: 38px;
+  justify-content: center;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-left: 20px;
+}
+
+.reserva-quarto {
+  width: 165px;
+  height: 38px;
+  appearance: none;
+  /* Remove estilo padrão */
+  background-color: white;
+  border: none;
+  padding: 10px 40px 10px 12px;
+  /* Espaço interno */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  /* seta afastada da borda */
+
+}
+
+.reserva-adulto {
+  width: 91px;
+  height: 38px;
+  appearance: none;
+  /* Remove estilo padrão */
+  background-color: white;
+  border: none;
+  padding: 10px 40px 10px 12px;
+  /* Espaço interno */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  /* seta afastada da borda */
+}
+
+.list-item select {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.reserva-crianca {
+  width: 128px;
+  height: 38px;
+  appearance: none;
+  /* Remove estilo padrão */
+  background-color: white;
+  border: none;
+  padding: 10px 40px 10px 12px;
+  /* Espaço interno */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  /* seta afastada da borda */
+}
+
+.list-botom {
+  background-color: rgba(38, 36, 35, 1);
+  color: rgba(255, 255, 255, 1);
+  width: 100px;
+  height: 38px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin: 25px 0 0 20px;
+}
+
+.reserva-text {
+  font-family: DM Serif Text;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  font-weight: bold;
+  color: rgba(38, 36, 35, 1);
+}
+
+label {
+  font-family: Roboto;
+  font-style: Regular;
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+.container-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Central */
+
+
+.container-central {
+  padding-top: 100px;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  max-width: 1146px;
+  transform: translate(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+.container-central-sobre {
+  position: relative;
+}
+
+.text-sobre1-central {
+  font-family: DM Serif Text;
+  font-style: Regular;
+  font-size: 80px;
+  line-height: 46px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #D2D2D24D;
+
+}
+
+.text-sobre2-central {
+  font-family: DM Serif Text;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  font-weight: bold;
+  color: rgba(38, 36, 35, 1);
+  position: absolute;
+  top: 14px;
+}
+
+.line-cetral {
+  width: 80px;
+  height: 3px;
+  background-color: #C19B76;
+  margin-top: 24px;
+}
+
+.text-info-central {
+  padding-top: 35px;
+  font-family: DM Serif Text;
+
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0%;
+
+}
+
+.text-msg-central {
+  padding-top: 18px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #7C7C7C;
+  vertical-align: middle;
+}
+
+.cards-menus {
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+}
+
+.card-menu {
+  width: 268px;
+  height: 129px;
+  background-color: #F6F7F8;
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.card-info {
+  padding: 20px 0;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.card-menu h4 {
+  font-size: 20px;
+  line-height: 26px;
+  vertical-align: middle;
+  color: #262423;
+}
+
+.card-menu p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7C7C7C;
+}
+
+.card-icon {
+  width: 129px;
+  height: 129px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-info-button {
+  width: 165px;
+  height: 42px;
+  background-color: #C19B76;
+  color: #fff;
+  border: none;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: Regular;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.info-traco {
+  width: 6px;
+  height: 1px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+
