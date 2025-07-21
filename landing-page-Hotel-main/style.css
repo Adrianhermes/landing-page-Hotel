@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  height: 2000px;
+  height: 3000px;
 }
 
 /* Barra de Cima */
@@ -239,7 +239,7 @@ label {
 
 .container-central {
   padding-top: 100px;
-  position: absolute;
+  position: relative;
   left: 50%;
   width: 100%;
   max-width: 1146px;
@@ -376,7 +376,74 @@ label {
   height: 1px;
   background-color: #fff;
   margin-left: 10px;
+}
+
+.container-acomodacao {
+  margin: 0;
+  padding-top: 100px;
+  position: relative;
+}
+
+.home-acomodacao{
+  position: relative;
+  text-align: center;
+}
+
+.text-acomodacao-g {
+  font-size: 100px;
+  color: rgba(0, 0, 0, 0.05); /* texto bem claro ao fundo */
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: none; /* impede que interfira no clique */
+   letter-spacing: -1px;
+}
+
+.text-acomodacao-p {
+  position: absolute;
+  top: 32%;
+  font-size: 50px;
+  color: #222;
+  font-weight: bold;
+  width: 100%;
+}
+
+.barra-acomodacao {
+  width: 90px;
+  height: 4px;
+  background-color: #C19B76;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.menu-home-acomodacao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.links{
+  display: flex;
+  gap: 80px;
+  list-style: none;
   
 }
 
+.links li a{
+  text-decoration: none;
+  color: #222;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+    text-decoration: none;
+  letter-spacing: 2px;
+  font-style: bold;
+  color: black;
+}
 
+
+.links li a:hover {
+  color: #c19b76;
+  transition: 0.8s;
+}
