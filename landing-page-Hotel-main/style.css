@@ -207,6 +207,11 @@ body {
   margin: 25px 0 0 20px;
 }
 
+.list-botom:hover {
+  background-color: #303030;
+  transition: 0.8s;
+}
+
 .reserva-text {
   font-family: DM Serif Text;
   font-weight: 400;
@@ -371,6 +376,10 @@ label {
   gap: 30px;
 }
 
+.more-info-button:hover {
+  background: #a07d54;
+  transition: 0.8s;
+}
 .info-traco {
   width: 6px;
   height: 1px;
@@ -384,18 +393,20 @@ label {
   position: relative;
 }
 
-.home-acomodacao{
+.home-acomodacao {
   position: relative;
   text-align: center;
 }
 
 .text-acomodacao-g {
   font-size: 100px;
-  color: rgba(0, 0, 0, 0.05); /* texto bem claro ao fundo */
+  color: rgba(0, 0, 0, 0.05);
+  /* texto bem claro ao fundo */
   font-weight: bold;
   text-transform: uppercase;
-  pointer-events: none; /* impede que interfira no clique */
-   letter-spacing: -1px;
+  pointer-events: none;
+  /* impede que interfira no clique */
+  letter-spacing: -1px;
 }
 
 .text-acomodacao-p {
@@ -415,28 +426,28 @@ label {
   margin: 0 auto;
 }
 
-.menu-home-acomodacao{
+.menu-home-acomodacao {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 40px;
 }
 
-.links{
+.links {
   display: flex;
   gap: 80px;
   list-style: none;
-  
+
 }
 
-.links li a{
+.links li a {
   text-decoration: none;
   color: #222;
   font-family: Roboto;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
-    text-decoration: none;
+  text-decoration: none;
   letter-spacing: 2px;
   font-style: bold;
   color: black;
@@ -447,3 +458,112 @@ label {
   color: #c19b76;
   transition: 0.8s;
 }
+
+/* Cards de acomodações */
+.acomodacoes-cards {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin: 50px 0 0 0;
+  position: relative;
+  width: 100%;
+}
+
+.acomodacao-card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.acomodacao-border{
+  width: 570px;
+  height: 360px;
+  position: relative;
+  z-index: 1;
+}
+.acomodacao-img{
+  z-index: 2;
+  width: 570px;
+  height: 360px;
+}
+
+.acomodacao-titulo {
+  left: 20px;
+  bottom: 20px;
+  color: #fff;
+  font-size: 34px;
+  font-family: 'DM Serif Text', serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 8px #000;
+  position: relative;
+  top: -60px;
+}
+
+.acomodacao-info {
+  position: absolute;
+  transform: translate(10px, 230px);
+   top: -100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 20px 0 20px;
+}
+
+.container-info {
+  position: relative;
+  top: -120px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.acomodacao-preco {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 10px;
+  position: relative;
+  font-style: Roboto, sans-serif;
+}
+
+.acomodacao-detalhes {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  font-size: 14px;
+  color: #222;
+  font-weight: bold;
+  gap: 15px;
+}
+
+.icon-info {
+  margin-right: 4px;
+  padding: 0 2px;
+}
+
+.acomodacao-btn {
+  background: #c19b76;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  align-self: flex-end;
+  top: -50px;
+  margin-right: 20px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.acomodacao-btn:hover {
+  background: #a07d54;
+}
+
+
+
+
+
