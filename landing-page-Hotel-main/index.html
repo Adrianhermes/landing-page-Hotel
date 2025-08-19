@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
+    
 </head>
 <!-- By: Adrian Hermes -->
 
@@ -233,10 +234,25 @@
           <div class="newsletter-divider"></div>
 
           <form class="newsletter-form-horizontal">
-            <input type="email" placeholder="DIGITE SEU EMAIL" required>
+            <input id="newsletter" placeholder="DIGITE SEU EMAIL" required>
+            
             <button type="submit">ENVIAR <span>→</span></button>
           </form>
+     
         </div>
+         <div class="newsletter-message">
+            <div class="error-message"></div>
+          <div class="sucess-message"></div>
+          </div>
+
+  <!-- Modal -->
+  <!-- <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Inscrição realizada com sucesso!</h2>
+      <button id="fecharModal">Fechar</button>
+    </div>
+  </div> -->
+
         <div class="newsletter-bar"></div>
 
         <div class="footer-columns">
@@ -315,5 +331,8 @@
       </div>
     </footer>
   </div>
+
+<script src="scripit.js"></script>
+  
 </body>
 </html>

@@ -634,7 +634,7 @@ label {
   overflow: hidden;
 }
 
-.newsletter-form-horizontal input[type="email"] {
+#newsletter {
   flex: 1;
   padding: 12px;
   border: none;
@@ -647,6 +647,19 @@ label {
   vertical-align: middle;
 
 }
+
+.newsletter-message {
+  position: relative;
+  left: 53%;
+  background-color: cornflowerblue;
+  height: 30px;
+  width: 540px;
+  color: white;
+  font-family: Roboto;
+  text-align: center;
+      margin-top: -30px;
+}
+
 
 .newsletter-form-horizontal button {
   background-color: #b7906b;
