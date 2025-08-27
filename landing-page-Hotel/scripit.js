@@ -1,35 +1,42 @@
 let txt = document.getElementById("newsletter");
 let btn = document.querySelector(".newsletter-form-horizontal button");
-let errorMessage = document.querySelector(".error-message");
-let sucessMessage = document.querySelector(".sucess-message");
 
-// Remover o segundo addEventListener incorreto
-// btn.addEventListener ("click", function()) { ... }
+let modal = document.getElementById("newsletter-modal");
+let modalMessage = document.getElementById("modal-message");
+let modalClose = document.getElementById("modal-close");
 
-btn.addEventListener("click", clicar);
-
-// Função que dispara quando clicam no botão
-function clicar(event) {
-  event.preventDefault(); // impede recarregar a página
-
+btn.addEventListener("click", function(event) {
+  event.preventDefault();
   let email = txt.value.trim();
-  errorMessage.style.display = "none";
-  sucessMessage.style.display = "none";
 
   if (!validarEmail(email)) {
-    errorMessage.textContent = "Por favor, insira um e-mail válido.";
-    errorMessage.style.display = "block";
-    sucessMessage.style.display = "none";
+    showModal("Por favor, insira um e-mail válido.", false);
   } else {
-    sucessMessage.textContent = "E-mail cadastrado com sucesso!";
-    sucessMessage.style.display = "block";
-    errorMessage.style.display = "none";
+    showModal("E-mail cadastrado com sucesso!", true);
   }
-  txt.value = ""; // Limpa o campo de entrada
-}
+  txt.value = "";
+});
 
-// Função de validação
 function validarEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(String(email).toLowerCase());
 }
+
+function showModal(message, isSuccess) {
+  modalMessage.textContent = message;
+  modalMessage.style.color = isSuccess ? "#388e3c" : "#d32f2f";
+  modal.style.display = "flex";
+}
+
+// Fecha o modal ao clicar no X
+modalClose.onclick = function() {
+  modal.style.display = "none";
+};
+
+// Fecha o modal ao clicar fora do conteúdo
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+

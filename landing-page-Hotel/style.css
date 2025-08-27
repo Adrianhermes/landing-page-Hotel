@@ -648,17 +648,53 @@ label {
 
 }
 
-.newsletter-message {
-  position: relative;
-  left: 53%;
-  background-color: cornflowerblue;
-  height: 30px;
-  width: 540px;
-  color: white;
-  font-family: Roboto;
-  text-align: center;
-      margin-top: -30px;
+.modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
 }
+
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 30px 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: #888;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #d32f2f;
+}
+
+#modal-message {
+  font-size: 17px;
+  margin-top: 18px;
+  color: #222;
+}
+
 
 
 .newsletter-form-horizontal button {
