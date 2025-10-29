@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../config/auth.php';
+exigirLogin();
 // /hotel/controllers/processarQuarto.php
 require_once __DIR__ . '/../config/conexao.php';
 

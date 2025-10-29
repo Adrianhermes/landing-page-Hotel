@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../../config/auth.php';
+$usuarioAtual = usuarioLogado();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +23,15 @@
       <div class="container-navbar">
         <img src="/hotel/img/sharai.png" alt="sharai" class="logo-navbar" />
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Post detail</a></li>
-          <li><a href="#">Pages</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Shortcodes</a></li>
+          <li><a href="/hotel/index.php">Home</a></li>
+          <li><a href="/hotel/views/gerenciarReserva.php">Reservas</a></li>
+          <li><a href="/hotel/views/gerenciarQuarto.php">Quartos</a></li>
+          <li><a href="/hotel/views/telaGerenciamento.php">Painel</a></li>
+          <?php if ($usuarioAtual): ?>
+            <li><a href="/hotel/controllers/logout.php">Sair</a></li>
+          <?php else: ?>
+            <li><a href="/hotel/views/login.php">Login</a></li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>

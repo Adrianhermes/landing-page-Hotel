@@ -38,60 +38,69 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
       </div>
 
       <div class="container-reserva">
-        <h3 class="reserva-text">Reserva</h3>
-        <div class="reserva-list">
-          <div class="list-item">
-            <label for="">Entrada/Sa&iacute;da </label>
+        <div class="reserva-heading">
+          <h3 class="reserva-text">Reserva</h3>
+        </div>
+        <div class="reserva-fields">
+          <div class="list-item list-item--entrada">
+            <label for="">Entrada/Sa&iacute;da</label>
             <div class="input-grupo">
-              <span class="seta">&rarr;</span>
-              <input type="date" class="reserva-entrada" placeholder="Entrada">
-              <span class="seta">&rarr;</span>
-              <input type="date" class="reserva-saida" placeholder="Sa&iacute;da">
+              <div class="input-wrapper">
+                <span class="seta">&rarr;</span>
+                <input type="date" class="reserva-entrada" placeholder="Entrada">
+              </div>
+              <div class="input-wrapper">
+                <span class="seta">&rarr;</span>
+                <input type="date" class="reserva-saida" placeholder="Sa&iacute;da">
+              </div>
             </div>
           </div>
-        </div>
 
-            <div class="list-item">
-          <label for="">Quarto</label>
-          <select name="reserva-quarto" id="" class="reserva-quarto" <?= empty($quartos) ? 'disabled' : '' ?>>
-            <?php if (empty($quartos)): ?>
-              <option value="">Nenhum quarto dispon&iacute;vel</option>
-            <?php else: ?>
-              <option value="" selected disabled>Selecione</option>
-              <?php foreach ($quartos as $quarto): ?>
-                <option value="<?= (int) $quarto['id'] ?>">
-                  No. <?= htmlspecialchars($quarto['numero']) ?> - <?= htmlspecialchars($quarto['tipo']) ?>
-                </option>
-              <?php endforeach; ?>
-            <?php endif; ?>
-          </select>
-        </div>
+          <div class="list-item">
+            <label for="">Quarto</label>
+            <select name="reserva-quarto" id="" class="reserva-quarto" <?= empty($quartos) ? 'disabled' : '' ?>>
+              <?php if (empty($quartos)): ?>
+                <option value="">Nenhum quarto dispon&iacute;vel</option>
+              <?php else: ?>
+                <option value="" selected disabled>Selecione</option>
+                <?php foreach ($quartos as $quarto): ?>
+                  <option value="<?= (int) $quarto['id'] ?>">
+                    No. <?= htmlspecialchars($quarto['numero']) ?> - <?= htmlspecialchars($quarto['tipo']) ?>
+                  </option>
+                <?php endforeach; ?>
+              <?php endif; ?>
+            </select>
+          </div>
 
-        <div class="list-item">
-          <label for="">Adulto</label>
-          <select name="reserva-adulto" id="" class="reserva-adulto">
-            <option value="1">1</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
-          </select>
-        </div>
+          <div class="list-item">
+            <label for="">Adulto</label>
+            <select name="reserva-adulto" id="" class="reserva-adulto">
+              <option value="1">1</option>
+              <option value="1">2</option>
+              <option value="1">3</option>
+              <option value="1">4</option>
+            </select>
+          </div>
 
-        <div class="list-item">
-          <label for="">Crian&ccedil;a</label>
-          <select name="reserva-crianca" id="" class="reserva-crianca">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
+          <div class="list-item">
+            <label for="">Crian&ccedil;a</label>
+            <select name="reserva-crianca" id="" class="reserva-crianca">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
 
-        <button class="list-botom" id="abrir-modal-reserva" <?= empty($quartos) ? 'disabled' : '' ?>>ENVIAR</button>
-        <?php if (empty($quartos)): ?>
-          <p class="reserva-alerta">Nenhum quarto dispon&iacute;vel no momento. Tente novamente em instantes.</p>
-        <?php endif; ?>
+          <div class="list-item list-item--button">
+            <button class="list-botom" id="abrir-modal-reserva" <?= empty($quartos) ? 'disabled' : '' ?>>ENVIAR</button>
+          </div>
+
+          <?php if (empty($quartos)): ?>
+            <p class="reserva-alerta">Nenhum quarto dispon&iacute;vel no momento. Tente novamente em instantes.</p>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
   </div>
@@ -153,7 +162,7 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
         </div>
       </div>
 
-      <button class="more-info-button">SAIBA MAIS
+      <button class="more-info-button" data-sobre-modal>SAIBA MAIS
         <div class="info-traco"></div>
       </button>
     </div>
@@ -306,7 +315,7 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
       <input type="hidden" name="quarto_id" id="reserva-modal-quarto">
       <input type="hidden" name="data_checkin" id="reserva-modal-checkin">
       <input type="hidden" name="data_checkout" id="reserva-modal-checkout">
-      <input type="hidden" name="status" value="pendente">
+      <input type="hidden" name="status" value="confirmada">
 
       <div class="modal-form-group">
         <label for="reserva-modal-nome">Nome completo</label>
@@ -338,35 +347,32 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
   </div>
 </div>
 
-  
+<div id="sobre-modal" class="modal modal-sobre">
+  <div class="modal-content">
+    <span class="close" data-modal-close="sobre-modal">&times;</span>
+    <div class="modal-sobre-header">
+      <h3>Experiência Essentia</h3>
+      <p class="modal-sobre-subtitle">Detalhes que transformam cada estadia.</p>
+    </div>
+    <div class="modal-sobre-body">
+      <p>
+        Relaxe em suítes com enxoval premium, assinatura aromática e atendimento dedicado.
+        Para completar, oferecemos café da manhã artesanal, sala de jogos e concierge 24h.
+      </p>
+      <ul class="modal-sobre-lista">
+        <li><strong>Gastronomia:</strong> Menu autoral e vinhos selecionados.</li>
+        <li><strong>Spa &amp; Wellness:</strong> Ritual Essentia com terapias regenerativas.</li>
+        <li><strong>Experiências:</strong> Tours privativos e agenda cultural personalizada.</li>
+      </ul>
+    </div>
+    <div class="modal-sobre-footer">
+      <button type="button" class="modal-sobre-fechar" data-modal-close="sobre-modal">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="scripit.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

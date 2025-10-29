@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../config/auth.php';
+exigirLogin();
 require_once __DIR__ . '/includes/header.php';
 require_once __DIR__ . '/../config/conexao.php';
 

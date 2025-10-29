@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../config/auth.php';
+exigirLogin();
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -75,7 +77,6 @@ require_once __DIR__ . '/includes/header.php';
     <!-- Botões -->
     <div class="mb-3 d-flex gap-2">
       <button type="submit" class="btn btn-success">Cadastrar Quarto</button>
-      <a href="/hotel/views/gerenciarQuarto.php" class="btn btn-primary">Gerenciar Quartos</a>
       <button type="button" class="btn btn-secondary" onclick="history.back()">Voltar</button>
     </div>
 

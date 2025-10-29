@@ -1,5 +1,8 @@
 <?php
+require_once __DIR__ . '/../config/auth.php';
+exigirLoginOuReservaPublica();
 require_once __DIR__ . '/../config/conexao.php';
+require_once __DIR__ . '/../config/email.php';
 
 $conexao = new Conexao();
 $pdo = $conexao->getPdo();
@@ -12,7 +15,7 @@ $cpf           = trim($_POST['cpf'] ?? '');
 $telefone      = trim($_POST['telefone'] ?? '');
 $data_checkin  = $_POST['data_checkin']  ?? '';
 $data_checkout = $_POST['data_checkout'] ?? '';
-$status        = $_POST['status']        ?? 'pendente';
+$status        = $_POST['status']        ?? 'confirmada';
 
 /* ---------- 2. Validação básica ---------- */
 $erros = [];
@@ -56,7 +59,7 @@ if (empty($data_checkin) || empty($data_checkout)) {
 }
 
 // status
-$valid_status = ['pendente', 'confirmada', 'cancelada'];
+$valid_status = ['confirmada', 'cancelada'];
 if (!in_array($status, $valid_status, true)) {
   $erros[] = "Status inválido.";
 }
@@ -68,13 +71,34 @@ if (!empty($erros)) {
   exit;
 }
 
-/* ---------- 3. Verificar conflito de reserva no mesmo quarto ---------- */
+/* ---------- 3. Validar quarto e verificar conflito de reserva ---------- */
+$dadosQuarto = null;
+
+try {
+  $sqlQuarto = "
+    SELECT numero, tipo
+      FROM quartos
+     WHERE id = :id
+  ";
+  $stmtQuarto = $pdo->prepare($sqlQuarto);
+  $stmtQuarto->execute([':id' => $quarto_id]);
+  $dadosQuarto = $stmtQuarto->fetch(PDO::FETCH_ASSOC);
+
+  if (!$dadosQuarto) {
+    $msg = urlencode("Quarto selecionado nao foi encontrado.");
+    header("Location: /hotel/views/reserva.php?m=$msg");
+    exit;
+  }
+} catch (PDOException $e) {
+  die("Erro ao validar quarto: " . $e->getMessage());
+}
+
 try {
   $sql_conf = "
     SELECT COUNT(*) 
       FROM reservas
      WHERE quarto_id = :quarto_id
-       AND status IN ('pendente','confirmada')
+       AND status = 'confirmada'
        AND NOT (
           :data_checkout <= data_checkin
           OR :data_checkin >= data_checkout
@@ -117,11 +141,23 @@ try {
     ':data_checkout' => $data_checkout,
     ':status' => $status
   ]);
-
-  // Redireciona para sucesso
-  header("Location: /hotel/views/sucessoReserva.php");
-  exit;
-
 } catch (PDOException $e) {
   die("Erro ao cadastrar reserva: " . $e->getMessage());
 }
+
+/* ---------- 5. Enviar e-mail de confirmacao ---------- */
+if ($status !== 'cancelada') {
+  enviarEmailConfirmacaoReserva([
+    'nome_cliente' => $nome_cliente,
+    'email' => $email,
+    'numero_quarto' => $dadosQuarto['numero'] ?? null,
+    'tipo_quarto' => $dadosQuarto['tipo'] ?? null,
+    'data_checkin' => $data_checkin,
+    'data_checkout' => $data_checkout,
+    'status' => $status,
+  ]);
+}
+
+// Redireciona para sucesso
+header("Location: /hotel/views/sucessoReserva.php");
+exit;

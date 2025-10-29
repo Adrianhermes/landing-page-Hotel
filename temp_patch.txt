@@ -1,0 +1,126 @@
+*** Begin Patch
+*** Update File: index.php
+@@
+-      <div class="container-reserva">
+-        <h3 class="reserva-text">Reserva</h3>
+-        <div class="reserva-list">
+-          <div class="list-item">
+-            <label for="">Entrada/Sa&iacute;da </label>
+-            <div class="input-grupo">
+-              <span class="seta">&rarr;</span>
+-              <input type="date" class="reserva-entrada" placeholder="Entrada">
+-              <span class="seta">&rarr;</span>
+-              <input type="date" class="reserva-saida" placeholder="Sa&iacute;da">
+-            </div>
+-          </div>
+-        </div>
+-
+-            <div class="list-item">
+-          <label for="">Quarto</label>
+-          <select name="reserva-quarto" id="" class="reserva-quarto" <?= empty($quartos) ? 'disabled' : '' ?>>
+-            <?php if (empty($quartos)): ?>
+-              <option value="">Nenhum quarto dispon&iacute;vel</option>
+-            <?php else: ?>
+-              <option value="" selected disabled>Selecione</option>
+-              <?php foreach ($quartos as $quarto): ?>
+-                <option value="<?= (int) $quarto['id'] ?>">
+-                  No. <?= htmlspecialchars($quarto['numero']) ?> - <?= htmlspecialchars($quarto['tipo']) ?>
+-                </option>
+-              <?php endforeach; ?>
+-            <?php endif; ?>
+-          </select>
+-        </div>
+-
+-        <div class="list-item">
+-          <label for="">Adulto</label>
+-          <select name="reserva-adulto" id="" class="reserva-adulto">
+-            <option value="1">1</option>
+-            <option value="1">2</option>
+-            <option value="1">3</option>
+-            <option value="1">4</option>
+-          </select>
+-        </div>
+-
+-        <div class="list-item">
+-          <label for="">Crian&ccedil;a</label>
+-          <select name="reserva-crianca" id="" class="reserva-crianca">
+-            <option value="1">1</option>
+-            <option value="2">2</option>
+-            <option value="3">3</option>
+-            <option value="4">4</option>
+-            <option value="5">5</option>
+-          </select>
+-        </div>
+-
+-        <button class="list-botom" id="abrir-modal-reserva" <?= empty($quartos) ? 'disabled' : '' ?>>ENVIAR</button>
+-        <?php if (empty($quartos)): ?>
+-          <p class="reserva-alerta">Nenhum quarto dispon&iacute;vel no momento. Tente novamente em instantes.</p>
+-        <?php endif; ?>
+-      </div>
++      <div class="container-reserva">
++        <div class="reserva-heading">
++          <h3 class="reserva-text">Reserva</h3>
++        </div>
++        <div class="reserva-fields">
++          <div class="list-item list-item--entrada">
++            <label for="">Entrada/Sa&iacute;da</label>
++            <div class="input-grupo">
++              <div class="input-wrapper">
++                <span class="seta">&rarr;</span>
++                <input type="date" class="reserva-entrada" placeholder="Entrada">
++              </div>
++              <div class="input-wrapper">
++                <span class="seta">&rarr;</span>
++                <input type="date" class="reserva-saida" placeholder="Sa&iacute;da">
++              </div>
++            </div>
++          </div>
++
++          <div class="list-item">
++            <label for="">Quarto</label>
++            <select name="reserva-quarto" id="" class="reserva-quarto" <?= empty($quartos) ? 'disabled' : '' ?>>
++              <?php if (empty($quartos)): ?>
++                <option value="">Nenhum quarto dispon&iacute;vel</option>
++              <?php else: ?>
++                <option value="" selected disabled>Selecione</option>
++                <?php foreach ($quartos as $quarto): ?>
++                  <option value="<?= (int) $quarto['id'] ?>">
++                    No. <?= htmlspecialchars($quarto['numero']) ?> - <?= htmlspecialchars($quarto['tipo']) ?>
++                  </option>
++                <?php endforeach; ?>
++              <?php endif; ?>
++            </select>
++          </div>
++
++          <div class="list-item">
++            <label for="">Adulto</label>
++            <select name="reserva-adulto" id="" class="reserva-adulto">
++              <option value="1">1</option>
++              <option value="1">2</option>
++              <option value="1">3</option>
++              <option value="1">4</option>
++            </select>
++          </div>
++
++          <div class="list-item">
++            <label for="">Crian&ccedil;a</label>
++            <select name="reserva-crianca" id="" class="reserva-crianca">
++              <option value="1">1</option>
++              <option value="2">2</option>
++              <option value="3">3</option>
++              <option value="4">4</option>
++              <option value="5">5</option>
++            </select>
++          </div>
++
++          <div class="list-item list-item--button">
++            <button class="list-botom" id="abrir-modal-reserva" <?= empty($quartos) ? 'disabled' : '' ?>>ENVIAR</button>
++          </div>
++
++          <?php if (empty($quartos)): ?>
++            <p class="reserva-alerta">Nenhum quarto dispon&iacute;vel no momento. Tente novamente em instantes.</p>
++          <?php endif; ?>
++        </div>
+       </div>
+ 
+   <div class="container-central">

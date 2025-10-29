@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../config/auth.php';
+exigirLogin();
 require_once __DIR__ . '/../config/conexao.php';
 
 $conexao = new Conexao();
@@ -12,7 +14,7 @@ $cpf           = trim($_POST['cpf'] ?? '');
 $telefone      = trim($_POST['telefone'] ?? '');
 $data_checkin  = $_POST['data_checkin'] ?? '';
 $data_checkout = $_POST['data_checkout'] ?? '';
-$status        = $_POST['status'] ?? 'pendente';
+$status        = $_POST['status'] ?? 'confirmada';
 
 if (!$id) die("ID da reserva não informado.");
 

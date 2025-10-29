@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../config/auth.php';
+exigirLogin();
 require_once __DIR__ . '/includes/header.php';
 require_once __DIR__ . '/../config/conexao.php';
 
@@ -27,7 +29,7 @@ if (!$reserva) {
 $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORDER BY numero")->fetchAll(PDO::FETCH_ASSOC);
 
 // Lista de status válidos
-$STATUS = ['pendente', 'confirmada', 'cancelada'];
+$STATUS = ['confirmada', 'cancelada'];
 
 // Função para escapar HTML
 function h($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
