@@ -27,13 +27,13 @@ function obterConfiguracaoSmtp(): array
 {
     return [
         'host' => 'smtp.gmail.com',
-        'username' => 'adrianhermes11@gmail.com',
-        'password' => '7596 3144',
-        'port' => 587,
+        'username' => 'seu email',
+        'password' => 'sua senha',
+        'port' => 000,
         'encryption' => PHPMailer::ENCRYPTION_STARTTLS,
-        'from_email' => 'adrian.hermes@essentia.com.br',
-        'from_name' => 'Adrian Hermes',
-        'reply_to' => 'adrian.hermes@essentia.com.br',
+        'from_email' => 'seu email',
+        'from_name' => 'seu nome',
+        'reply_to' => 'seu email',
     ];
 }
 
