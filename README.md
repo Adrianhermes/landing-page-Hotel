@@ -101,7 +101,7 @@ reservas
   - A tela de login já vem preenchida para testes com:
     - Email: `admin@essentia.com`
     - Senha: `admin`
-    - 
+      
  A versão estática é de demonstração e não grava dados de reserva.
  https://landing-page-hotel-alpha.vercel.app/
 
