@@ -99,14 +99,9 @@ reservas
   - Painel admin (MAMP porta padrão): `http://localhost:8888/landing-page-Hotel-principal/views/login.php`
   - Sem porta (Apache padrão): `http://localhost/landing-page-Hotel-principal/index.php`
 
-5. Credenciais e dados iniciais (estado atual):
-  - O seed atual (`hotel_reservas.sql`) inclui apenas 1 usuário admin:
-    - Email: `admin@essentia.com`
+5. Credenciais e dados iniciais:
   - A tela de login já vem preenchida para testes com:
     - Email: `admin@essentia.com`
     - Senha: `admin`
-  - O backend está com senha mestre de desenvolvimento em `controllers/processarLogin.php`:
-    - `SENHA_MESTRE_DEMO = 'admin'`
+ 
 
-6. Observação de segurança:
-  - Antes de publicar em produção, remova a senha mestre de desenvolvimento e use somente autenticação por hash (`password_hash` / `password_verify`).
