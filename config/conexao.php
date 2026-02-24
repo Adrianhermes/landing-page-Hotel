@@ -7,7 +7,7 @@ class Conexao {
     private $host = 'localhost'; 
     private $dbname = 'hotel_reservas';
     private $username = 'root';
-    private $password = '';
+    private $password = 'root';
     private $pdo;
 
 

@@ -7,7 +7,7 @@ $conexao = new Conexao();
 $pdo = $conexao->getPdo();
 
 function redirecionar(string $situacao, string $mensagem = ''): void {
-    $url = '/hotel/index.php?reserva=' . rawurlencode($situacao);
+    $url = '/landing-page-Hotel-principal/index.php?reserva=' . rawurlencode($situacao);
     if ($mensagem !== '') {
         $url .= '&msg=' . rawurlencode($mensagem);
     }

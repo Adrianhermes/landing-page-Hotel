@@ -30,14 +30,14 @@ $reservas = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 $flash = $_GET['m'] ?? null;
 ?>
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="mb-0">Gerenciar Reservas</h2>
     <div class="d-flex gap-2">
-      <a href="/hotel/views/reservas.php" class="btn btn-success">Nova Reserva</a>
+      <a href="/landing-page-Hotel-principal/views/reservas.php" class="btn btn-success">Nova Reserva</a>
     </div>
   </div>
 
@@ -155,9 +155,9 @@ $flash = $_GET['m'] ?? null;
                   <span class="badge bg-<?= $badge ?>"><?= ucfirst($status) ?></span>
                 </td>
                 <td>
-                  <a href="/hotel/views/updateReserva.php?id=<?= (int)$r['id'] ?>" class="btn btn-primary btn-sm">Editar</a>
+                  <a href="/landing-page-Hotel-principal/views/updateReserva.php?id=<?= (int)$r['id'] ?>" class="btn btn-primary btn-sm">Editar</a>
 
-                  <form action="/hotel/controllers/excluirReserva.php" method="POST" class="d-inline"
+                  <form action="/landing-page-Hotel-principal/controllers/excluirReserva.php" method="POST" class="d-inline"
                         onsubmit="return confirm('Tem certeza que deseja excluir esta reserva?');">
                     <input type="hidden" name="id" value="<?= (int)$r['id'] ?>">
                     <button type="submit" class="btn btn-danger btn-sm">Excluir</button>

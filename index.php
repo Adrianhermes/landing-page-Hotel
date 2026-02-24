@@ -33,7 +33,7 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
           <li><a href="#">Pages</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Shortcodes</a></li>
-          <li><a href="/hotel/views/login.php">Login</a></li>
+          <li><a href="/landing-page-Hotel-principal/views/login.php">Login</a></li>
         </ul>
       </div>
 
@@ -311,7 +311,7 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
     <span class="close" data-modal-close="reserva-modal">&times;</span>
     <h3>Finalize sua reserva</h3>
     <p class="modal-description">Preencha seus dados para que possamos concluir o agendamento.</p>
-    <form id="reserva-modal-form" action="/hotel/controllers/processarReservaPublica.php" method="POST" novalidate>
+    <form id="reserva-modal-form" action="/landing-page-Hotel-principal/controllers/processarReservaPublica.php" method="POST" novalidate>
       <input type="hidden" name="quarto_id" id="reserva-modal-quarto">
       <input type="hidden" name="data_checkin" id="reserva-modal-checkin">
       <input type="hidden" name="data_checkout" id="reserva-modal-checkout">

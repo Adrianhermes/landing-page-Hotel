@@ -18,7 +18,7 @@ try {
   // (Opcional) recalcular AUTO_INCREMENT
   // $pdo->exec("ALTER TABLE reservas AUTO_INCREMENT = 1");
 
-  header("Location: /hotel/views/gerenciarReserva.php?m=Reserva excluída com sucesso!");
+  header("Location: /landing-page-Hotel-principal/views/gerenciarReserva.php?m=Reserva excluída com sucesso!");
   exit;
 } catch (PDOException $e) {
   die("Erro ao excluir reserva: " . $e->getMessage());

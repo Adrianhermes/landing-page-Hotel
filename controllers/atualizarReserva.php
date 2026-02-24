@@ -45,7 +45,7 @@ try {
     ':status'        => $status
   ]);
 
-  header("Location: /hotel/views/gerenciarReserva.php?m=Reserva atualizada com sucesso!");
+  header("Location: /landing-page-Hotel-principal/views/gerenciarReserva.php?m=Reserva atualizada com sucesso!");
   exit;
 
 } catch (PDOException $e) {

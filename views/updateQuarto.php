@@ -24,13 +24,13 @@ if (!$quarto) {
 function h($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
 ?>
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container">
   <h2>Editar Quarto #<?= (int)$quarto['id'] ?></h2>
 
-  <form action="/hotel/controllers/atualizarQuarto.php" method="POST" class="form-quarto">
+  <form action="/landing-page-Hotel-principal/controllers/atualizarQuarto.php" method="POST" class="form-quarto">
 
     <input type="hidden" name="id" value="<?= (int)$quarto['id'] ?>">
 
@@ -76,7 +76,7 @@ function h($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
     <!-- Botões -->
     <div class="mb-3 d-flex gap-2">
       <button type="submit" class="btn btn-success">Salvar Alterações</button>
-      <a href="/hotel/views/gerenciarQuarto.php" class="btn btn-secondary">Cancelar</a>
+      <a href="/landing-page-Hotel-principal/views/gerenciarQuarto.php" class="btn btn-secondary">Cancelar</a>
     </div>
 
   </form>

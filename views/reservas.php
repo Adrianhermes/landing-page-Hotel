@@ -10,7 +10,7 @@ $pdo = $conexao->getPdo();
 $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORDER BY numero")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container">
@@ -22,7 +22,7 @@ $quartos = $pdo->query("SELECT id, numero, tipo FROM quartos WHERE ativo = 1 ORD
     </div>
   <?php endif; ?>
 
-  <form action="/hotel/controllers/processarReserva.php" method="POST" class="form-quarto" id="form-reserva">
+  <form action="/landing-page-Hotel-principal/controllers/processarReserva.php" method="POST" class="form-quarto" id="form-reserva">
 
     <!-- Quarto -->
     <div class="mb-3">
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     disponibilidadeCarregando = true;
     try {
-      const resposta = await fetch('/hotel/controllers/disponibilidadeQuarto.php?quarto_id=' + encodeURIComponent(quartoId), {
+      const resposta = await fetch('/landing-page-Hotel-principal/controllers/disponibilidadeQuarto.php?quarto_id=' + encodeURIComponent(quartoId), {
         cache: 'no-store',
       });
       if (!resposta.ok) {

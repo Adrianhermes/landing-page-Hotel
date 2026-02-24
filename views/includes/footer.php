@@ -18,22 +18,22 @@
 
     <div class="footer-columns">
       <div class="footer-box footer-about">
-        <img src="/hotel/img/sharai.png" alt="sharai" class="logo-footer" />
+        <img src="/landing-page-Hotel-principal/img/sharai.png" alt="sharai" class="logo-footer" />
         <p class="description">
           Today we can tell you, thanks to your passion, hard work, creativity, and expertise, you delivered us the
           most beautiful house great looks.
         </p>
         <div class="social-icons">
           <a href="https://www.facebook.com/essentiapharma/?locale=pt_BR" target="_blank" rel="noopener noreferrer">
-            <img src="/hotel/img/face.png" alt="Facebook" class="social-face">
+            <img src="/landing-page-Hotel-principal/img/face.png" alt="Facebook" class="social-face">
           </a>
-          <a href="#"><img src="/hotel/img/rede.png" alt="RSS"></a>
+          <a href="#"><img src="/landing-page-Hotel-principal/img/rede.png" alt="RSS"></a>
           <a href="https://www.linkedin.com/company/grupoessentia/?originalSubdomain=br" target="_blank" rel="noopener noreferrer">
-            <img src="/hotel/img/linkedin.png" alt="LinkedIn">
+            <img src="/landing-page-Hotel-principal/img/linkedin.png" alt="LinkedIn">
           </a>
-          <a href="#"><img src="/hotel/img/google.png" alt="Google+"></a>
+          <a href="#"><img src="/landing-page-Hotel-principal/img/google.png" alt="Google+"></a>
           <a href="https://www.instagram.com/essentiagroup/" target="_blank" rel="noopener noreferrer">
-            <img src="/hotel/img/insta.png" alt="Instagram">
+            <img src="/landing-page-Hotel-principal/img/insta.png" alt="Instagram">
           </a>
         </div>
       </div>
@@ -67,7 +67,7 @@
         <ul class="contact">
           <li>
             <span class="contact-icon">
-              <img src="/hotel/img/mapa.png" alt="Icone de endereco">
+              <img src="/landing-page-Hotel-principal/img/mapa.png" alt="Icone de endereco">
             </span>
             <span class="contact-text">
               92 Princess Road, parkvenue, Greater London, NW18JR, United Kingdom
@@ -75,7 +75,7 @@
           </li>
           <li>
             <span class="contact-icon">
-              <img src="/hotel/img/email.png" alt="Icone de e-mail">
+              <img src="/landing-page-Hotel-principal/img/email.png" alt="Icone de e-mail">
             </span>
             <span class="contact-text">
               adrianhermes11@gmail.com
@@ -83,7 +83,7 @@
           </li>
           <li>
             <span class="contact-icon">
-              <img src="/hotel/img/telefone.png" alt="Icone de telefone">
+              <img src="/landing-page-Hotel-principal/img/telefone.png" alt="Icone de telefone">
             </span>
             <span class="contact-text">
               (+0091) 912-3456-073
@@ -91,7 +91,7 @@
           </li>
           <li>
             <span class="contact-icon">
-              <img src="/hotel/img/impressora.png" alt="Icone de fax">
+              <img src="/landing-page-Hotel-principal/img/impressora.png" alt="Icone de fax">
             </span>
             <span class="contact-text">
               (+0091) 912-3456-084
@@ -114,4 +114,4 @@
   </div>
 </footer>
 
-<script src="/hotel/scripit.js" defer></script>
+<script src="/landing-page-Hotel-principal/scripit.js" defer></script>

@@ -35,13 +35,13 @@ try {
     ':id' => $id
   ]);
 
-  header("Location: /hotel/views/gerenciarQuarto.php?m=Quarto atualizado com sucesso!");
+  header("Location: /landing-page-Hotel-principal/views/gerenciarQuarto.php?m=Quarto atualizado com sucesso!");
   exit;
 
 } catch (PDOException $e) {
   // Trata erro de número duplicado, por exemplo (unique em 'numero')
   if ($e->getCode() == 23000) {
-    header("Location: /hotel/views/updateQuarto.php?id=".$id."&m=Já existe um quarto com esse número.");
+    header("Location: /landing-page-Hotel-principal/views/updateQuarto.php?id=".$id."&m=Já existe um quarto com esse número.");
     exit;
   }
   die("Erro ao atualizar quarto: " . $e->getMessage());

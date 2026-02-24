@@ -35,13 +35,13 @@ $STATUS = ['confirmada', 'cancelada'];
 function h($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
 ?>
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container">
   <h2>Editar Reserva #<?= (int)$reserva['id'] ?></h2>
 
-  <form action="/hotel/controllers/atualizarReserva.php" method="POST" class="form-quarto">
+  <form action="/landing-page-Hotel-principal/controllers/atualizarReserva.php" method="POST" class="form-quarto">
     <input type="hidden" name="id" value="<?= (int)$reserva['id'] ?>">
 
     <!-- Quarto -->
@@ -109,7 +109,7 @@ function h($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
     <!-- Botões -->
     <div class="mb-3 d-flex gap-2">
       <button type="submit" class="btn btn-success">Salvar Alterações</button>
-      <a href="/hotel/views/gerenciarReserva.php" class="btn btn-secondary">Voltar</a>
+      <a href="/landing-page-Hotel-principal/views/gerenciarReserva.php" class="btn btn-secondary">Voltar</a>
     </div>
   </form>
 </div>

@@ -5,14 +5,14 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container">
   <h2>Cadastro de Quarto</h2>
 
   <!-- novalidate para controlar mensagens customizadas via JS -->
-  <form action="/hotel/controllers/processarQuarto.php" method="POST" class="form-quarto needs-validation" novalidate>
+  <form action="/landing-page-Hotel-principal/controllers/processarQuarto.php" method="POST" class="form-quarto needs-validation" novalidate>
 
     <!-- Número do quarto -->
     <div class="mb-3">

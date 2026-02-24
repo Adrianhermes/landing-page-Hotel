@@ -30,7 +30,7 @@ $flashError = $_GET['e'] ?? null;
 ?>
 
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container admin-dashboard">
@@ -88,7 +88,7 @@ $flashError = $_GET['e'] ?? null;
         <p>Defina o nome completo, escolha ou informe um email e crie uma senha inicial.</p>
       </header>
       <div class="admin-card-body">
-        <form action="/hotel/controllers/cadastrarUsuario.php" method="POST" class="admin-form">
+        <form action="/landing-page-Hotel-principal/controllers/cadastrarUsuario.php" method="POST" class="admin-form">
           <div class="admin-form-field">
             <label for="nome">Nome completo</label>
             <input type="text" id="nome" name="nome" placeholder="Ex.: Maria Pereira" required>
@@ -173,8 +173,8 @@ $flashError = $_GET['e'] ?? null;
                     <td><?= htmlspecialchars($criadoFormatado) ?></td>
                     <td>
                       <div class="admin-table-actions">
-                        <a href="/hotel/views/updateUsuario.php?id=<?= $usuarioId ?>" class="admin-btn admin-btn-ghost">Editar</a>
-                        <form action="/hotel/controllers/excluirUsuario.php" method="POST" class="form-excluir-usuario">
+                        <a href="/landing-page-Hotel-principal/views/updateUsuario.php?id=<?= $usuarioId ?>" class="admin-btn admin-btn-ghost">Editar</a>
+                        <form action="/landing-page-Hotel-principal/controllers/excluirUsuario.php" method="POST" class="form-excluir-usuario">
                           <input type="hidden" name="id" value="<?= $usuarioId ?>">
                           <button type="submit" class="admin-btn admin-btn-danger" <?= $proprioUsuario ? 'disabled' : '' ?>>
                             Excluir

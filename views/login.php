@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/auth.php';
 
 if (usuarioLogado()) {
-    header('Location: /hotel/views/gerenciarReserva.php');
+    header('Location: /landing-page-Hotel-principal/views/gerenciarReserva.php');
     exit;
 }
 
@@ -13,7 +13,7 @@ $flashError = $_GET['e'] ?? null;
 ?>
 
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container mt-5">
@@ -31,7 +31,7 @@ $flashError = $_GET['e'] ?? null;
             <div class="alert alert-danger py-2"><?= htmlspecialchars($flashError) ?></div>
           <?php endif; ?>
 
-          <form action="/hotel/controllers/processarLogin.php" method="POST" novalidate>
+          <form action="/landing-page-Hotel-principal/controllers/processarLogin.php" method="POST" novalidate>
             <div class="mb-3">
               <label for="email" class="form-label">E-mail</label>
               <input
@@ -40,19 +40,21 @@ $flashError = $_GET['e'] ?? null;
                 id="email"
                 name="email"
                 placeholder="admin@hotel.com"
+                value="admin@essentia.com"
                 required
               >
             </div>
             <div class="mb-3">
               <label for="senha" class="form-label">Senha</label>
               <input
-                type="password"
+                type="text"
                 class="form-control"
                 id="senha"
                 name="senha"
                 placeholder="Sua senha"
+                value="admin"
                 required
-                minlength="6"
+                minlength="5"
               >
             </div>
             <button type="submit" class="btn btn-primary w-100">Entrar</button>

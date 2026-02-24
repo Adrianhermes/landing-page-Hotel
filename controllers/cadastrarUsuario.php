@@ -4,7 +4,7 @@ exigirLogin();
 require_once __DIR__ . '/../config/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /hotel/views/telaGerenciamento.php');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php');
     exit;
 }
 
@@ -15,12 +15,12 @@ $senha = $_POST['senha'] ?? '';
 $confirmar = $_POST['confirmar_senha'] ?? '';
 
 if ($nome === '' || $senha === '' || $confirmar === '') {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Preencha todos os campos');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Preencha todos os campos');
     exit;
 }
 
 if ($emailSelect === '' && $emailCustomRaw === '') {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Selecione ou informe um email');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Selecione ou informe um email');
     exit;
 }
 
@@ -31,17 +31,17 @@ if ($emailSelect === '__custom') {
 }
 
 if (!$email) {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Email invalido');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Email invalido');
     exit;
 }
 
 if (strlen($senha) < 6) {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Senha deve ter pelo menos 6 caracteres');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Senha deve ter pelo menos 6 caracteres');
     exit;
 }
 
 if ($senha !== $confirmar) {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Senha e confirmacao nao conferem');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Senha e confirmacao nao conferem');
     exit;
 }
 
@@ -51,7 +51,7 @@ $pdo = $conexao->getPdo();
 $stmt = $pdo->prepare('SELECT id FROM usuarios_admin WHERE email = :email LIMIT 1');
 $stmt->execute(['email' => $email]);
 if ($stmt->fetch()) {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Email ja cadastrado');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Email ja cadastrado');
     exit;
 }
 
@@ -64,9 +64,9 @@ try {
         'email' => $email,
         'hash' => $hash,
     ]);
-    header('Location: /hotel/views/telaGerenciamento.php?m=Usuario cadastrado com sucesso');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?m=Usuario cadastrado com sucesso');
     exit;
 } catch (PDOException $e) {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Erro ao cadastrar usuario');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Erro ao cadastrar usuario');
     exit;
 }

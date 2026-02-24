@@ -27,13 +27,13 @@ function h_usuario($valor) {
 $flashErro = $_GET['e'] ?? null;
 ?>
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="mb-0">Editar usuario</h2>
-    <a href="/hotel/views/telaGerenciamento.php" class="btn btn-secondary">Voltar</a>
+    <a href="/landing-page-Hotel-principal/views/telaGerenciamento.php" class="btn btn-secondary">Voltar</a>
   </div>
 
   <?php if (!empty($flashErro)): ?>
@@ -42,7 +42,7 @@ $flashErro = $_GET['e'] ?? null;
 
   <div class="card">
     <div class="card-body">
-      <form action="/hotel/controllers/atualizarUsuario.php" method="POST" class="row g-3">
+      <form action="/landing-page-Hotel-principal/controllers/atualizarUsuario.php" method="POST" class="row g-3">
         <input type="hidden" name="id" value="<?= (int) $usuario['id'] ?>">
 
         <div class="col-md-6">
@@ -71,7 +71,7 @@ $flashErro = $_GET['e'] ?? null;
 
         <div class="col-12 d-flex gap-2">
           <button type="submit" class="btn btn-primary">Salvar alteracoes</button>
-          <a href="/hotel/views/telaGerenciamento.php" class="btn btn-outline-secondary">Cancelar</a>
+          <a href="/landing-page-Hotel-principal/views/telaGerenciamento.php" class="btn btn-outline-secondary">Cancelar</a>
         </div>
       </form>
     </div>

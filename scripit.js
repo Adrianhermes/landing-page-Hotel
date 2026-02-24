@@ -256,7 +256,7 @@ async function handleSaibaMais(button) {
     let data;
 
     try {
-      response = await fetch("/hotel/controllers/criarReservaRapida.php", {
+      response = await fetch("/landing-page-Hotel-principal/controllers/criarReservaRapida.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -471,7 +471,7 @@ if (saibaMaisButtons.length > 0 && infoModal) {
 
 if (infoReservasButton) {
   infoReservasButton.addEventListener("click", () => {
-    window.location.href = "/hotel/controllers/liberarReservaPublica.php";
+    window.location.href = "/landing-page-Hotel-principal/controllers/liberarReservaPublica.php";
   });
 }
 

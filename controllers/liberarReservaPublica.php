@@ -5,5 +5,5 @@ require_once __DIR__ . '/../config/auth.php';
 
 liberarAcessoReservaPublica();
 
-header('Location: /hotel/views/reservas.php?via=publico');
+header('Location: /landing-page-Hotel-principal/views/reservas.php?via=publico');
 exit;

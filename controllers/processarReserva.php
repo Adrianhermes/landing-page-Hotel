@@ -67,7 +67,7 @@ if (!in_array($status, $valid_status, true)) {
 // Se tiver erros, redireciona de volta com mensagem
 if (!empty($erros)) {
   $msg = urlencode(implode(' ', $erros));
-  header("Location: /hotel/views/reserva.php?m=$msg");
+  header("Location: /landing-page-Hotel-principal/views/reserva.php?m=$msg");
   exit;
 }
 
@@ -86,7 +86,7 @@ try {
 
   if (!$dadosQuarto) {
     $msg = urlencode("Quarto selecionado nao foi encontrado.");
-    header("Location: /hotel/views/reserva.php?m=$msg");
+    header("Location: /landing-page-Hotel-principal/views/reserva.php?m=$msg");
     exit;
   }
 } catch (PDOException $e) {
@@ -114,7 +114,7 @@ try {
 
   if ($conflitos > 0) {
     $msg = urlencode("Já existe uma reserva para este quarto nesse período.");
-    header("Location: /hotel/views/reserva.php?m=$msg");
+    header("Location: /landing-page-Hotel-principal/views/reserva.php?m=$msg");
     exit;
   }
 } catch (PDOException $e) {
@@ -159,5 +159,5 @@ if ($status !== 'cancelada') {
 }
 
 // Redireciona para sucesso
-header("Location: /hotel/views/sucessoReserva.php");
+header("Location: /landing-page-Hotel-principal/views/sucessoReserva.php");
 exit;

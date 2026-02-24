@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/auth.php';
 exigirLogin();
-// /hotel/controllers/processarQuarto.php
+// /landing-page-Hotel-principal/controllers/processarQuarto.php
 require_once __DIR__ . '/../config/conexao.php';
 
 $conexao = new Conexao();
@@ -48,7 +48,7 @@ try {
     ':ativo'     => $ativo,
   ]);
 
-  header('Location: /hotel/views/sucesso.php');
+  header('Location: /landing-page-Hotel-principal/views/sucesso.php');
   exit;
 
 } catch (PDOException $e) {
@@ -66,12 +66,12 @@ try {
         ':descricao' => $descricao,
       ]);
 
-      header('Location: /hotel/views/sucesso.php');
+      header('Location: /landing-page-Hotel-principal/views/sucesso.php');
       exit;
     } catch (PDOException $e2) {
       // trata duplicidade ou outros erros
       if ($e2->getCode() === '23000') {
-        header('Location: /hotel/views/quartoExistente.php');
+        header('Location: /landing-page-Hotel-principal/views/quartoExistente.php');
         exit;
       }
       die('Erro ao cadastrar: ' . $e2->getMessage());
@@ -80,7 +80,7 @@ try {
 
   // Trata duplicidade (unique em 'numero') ou demais erros
   if ($e->getCode() === '23000') {
-    header('Location: /hotel/views/quartoExistente.php');
+    header('Location: /landing-page-Hotel-principal/views/quartoExistente.php');
     exit;
   }
 

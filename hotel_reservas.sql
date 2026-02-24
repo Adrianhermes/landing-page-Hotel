@@ -106,9 +106,6 @@ CREATE TABLE `usuarios_admin` (
 --
 
 INSERT INTO `usuarios_admin` (`id`, `nome`, `email`, `senha_hash`, `criado_em`) VALUES
-(1, 'Administrador', 'adrian.hermes@essentia.com.br', '$2y$10$3Mpitq19YwJNhWAwSpKN5OwPNLXfKduQ1IFyMQSfqueMWQbOc8ZEe', '2025-10-23 19:04:59'),
-(3, 'Adrian Hermes', 'adrianhermes11@gmail.com', '$2y$10$2h2YljcQKEJs5odNzsuRyuNQKGuQLxV3US1dKUs3pAZwpbw/oM7.e', '2025-10-23 19:22:41'),
-(4, 'Leonardo Doose', 'leonardo@essentialnutrition.com.br', '$2y$10$EtUifc6VapacwCSTn/u7IOH7iFUCZK9fZFenya.Axw76VfBqyDsHy', '2025-10-27 21:37:33'),
 (5, 'Super Admin', 'admin@essentia.com', '$2y$10$tZzoeo9JiwtaXTkvuTm0HOIbGKNM/CEwRWvlkL.I5z4zPq7q4mpiu', '2025-10-27 22:20:05');
 
 --

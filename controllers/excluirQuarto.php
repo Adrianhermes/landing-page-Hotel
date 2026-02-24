@@ -19,7 +19,7 @@ try {
     $stmt->execute([$id]);
 
     // Redireciona de volta com mensagem de sucesso
-    header("Location: /hotel/views/gerenciarQuarto.php?m=Quarto excluído com sucesso!");
+    header("Location: /landing-page-Hotel-principal/views/gerenciarQuarto.php?m=Quarto excluído com sucesso!");
     exit;
 
 } catch (PDOException $e) {

@@ -4,7 +4,7 @@ exigirLogin();
 require_once __DIR__ . '/../config/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /hotel/views/telaGerenciamento.php');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php');
     exit;
 }
 
@@ -15,18 +15,18 @@ $novaSenha = $_POST['senha'] ?? '';
 $confirmarSenha = $_POST['confirmar_senha'] ?? '';
 
 if ($id <= 0) {
-    header('Location: /hotel/views/telaGerenciamento.php?e=Usuario invalido');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Usuario invalido');
     exit;
 }
 
 if ($nome === '' || $email === '') {
-    header("Location: /hotel/views/updateUsuario.php?id={$id}&e=Preencha nome e email");
+    header("Location: /landing-page-Hotel-principal/views/updateUsuario.php?id={$id}&e=Preencha nome e email");
     exit;
 }
 
 $emailFiltrado = filter_var($email, FILTER_VALIDATE_EMAIL);
 if (!$emailFiltrado) {
-    header("Location: /hotel/views/updateUsuario.php?id={$id}&e=Email invalido");
+    header("Location: /landing-page-Hotel-principal/views/updateUsuario.php?id={$id}&e=Email invalido");
     exit;
 }
 
@@ -34,12 +34,12 @@ $alterarSenha = false;
 $novaSenhaTratada = '';
 if ($novaSenha !== '' || $confirmarSenha !== '') {
     if (strlen($novaSenha) < 6) {
-        header("Location: /hotel/views/updateUsuario.php?id={$id}&e=Senha deve ter pelo menos 6 caracteres");
+        header("Location: /landing-page-Hotel-principal/views/updateUsuario.php?id={$id}&e=Senha deve ter pelo menos 6 caracteres");
         exit;
     }
 
     if ($novaSenha !== $confirmarSenha) {
-        header("Location: /hotel/views/updateUsuario.php?id={$id}&e=Senha e confirmacao nao conferem");
+        header("Location: /landing-page-Hotel-principal/views/updateUsuario.php?id={$id}&e=Senha e confirmacao nao conferem");
         exit;
     }
 
@@ -57,7 +57,7 @@ try {
     $usuarioAtual = $stmtBusca->fetch(PDO::FETCH_ASSOC);
 
     if (!$usuarioAtual) {
-        header('Location: /hotel/views/telaGerenciamento.php?e=Usuario nao encontrado');
+        header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?e=Usuario nao encontrado');
         exit;
     }
 
@@ -68,7 +68,7 @@ try {
     ]);
 
     if ($stmtDuplicado->fetch()) {
-        header("Location: /hotel/views/updateUsuario.php?id={$id}&e=Email ja utilizado por outro usuario");
+        header("Location: /landing-page-Hotel-principal/views/updateUsuario.php?id={$id}&e=Email ja utilizado por outro usuario");
         exit;
     }
 
@@ -89,9 +89,9 @@ try {
         ]);
     }
 
-    header('Location: /hotel/views/telaGerenciamento.php?m=Usuario atualizado com sucesso');
+    header('Location: /landing-page-Hotel-principal/views/telaGerenciamento.php?m=Usuario atualizado com sucesso');
     exit;
 } catch (PDOException $exception) {
-    header("Location: /hotel/views/updateUsuario.php?id={$id}&e=Erro ao atualizar usuario");
+    header("Location: /landing-page-Hotel-principal/views/updateUsuario.php?id={$id}&e=Erro ao atualizar usuario");
     exit;
 }

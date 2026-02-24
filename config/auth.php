@@ -35,7 +35,7 @@ function usuarioLogado(): ?array
 function exigirLogin(): void
 {
     if (!usuarioLogado()) {
-        header('Location: /hotel/views/login.php?e=Faca login para continuar');
+        header('Location: /landing-page-Hotel-principal/views/login.php?e=Faca login para continuar');
         exit;
     }
 }
@@ -93,6 +93,6 @@ function exigirLoginOuReservaPublica(): void
         return;
     }
 
-    header('Location: /hotel/views/login.php?e=Faca login para continuar');
+    header('Location: /landing-page-Hotel-principal/views/login.php?e=Faca login para continuar');
     exit;
 }

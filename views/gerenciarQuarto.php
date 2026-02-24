@@ -28,14 +28,14 @@ if (!empty($quartos)) {
 }
 ?>
 <head>
-  <link rel="stylesheet" href="/hotel/assets/css/style.css">
+  <link rel="stylesheet" href="/landing-page-Hotel-principal/assets/css/style.css">
 </head>
 
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="mb-0">Gerenciar Quartos</h2>
     <div class="d-flex gap-2">
-      <a href="/hotel/views/quarto.php" class="btn btn-success">Novo Quarto</a>
+      <a href="/landing-page-Hotel-principal/views/quarto.php" class="btn btn-success">Novo Quarto</a>
     </div>
   </div>
 
@@ -151,10 +151,10 @@ if (!empty($quartos)) {
                 </td>
                 <td>
                   <div class="quartos-acoes">
-                    <a href="/hotel/views/updateQuarto.php?id=<?= (int) $q['id'] ?>"
+                    <a href="/landing-page-Hotel-principal/views/updateQuarto.php?id=<?= (int) $q['id'] ?>"
                        class="btn quartos-btn quartos-btn-editar">Editar</a>
 
-                    <form action="/hotel/controllers/excluirQuarto.php"
+                    <form action="/landing-page-Hotel-principal/controllers/excluirQuarto.php"
                           method="POST"
                           class="quartos-form-excluir"
                           onsubmit="return confirm('Tem certeza que deseja excluir este quarto?');">
