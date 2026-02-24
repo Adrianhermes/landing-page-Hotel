@@ -96,39 +96,13 @@ reservas
 
 4. Acesso:
   - Front público (MAMP porta padrão): `http://localhost:8888/landing-page-Hotel-principal/index.php`
-  - Painel admin (MAMP porta padrão): `http://localhost:8888/landing-page-Hotel-principal/views/login.php`
-  - Sem porta (Apache padrão): `http://localhost/landing-page-Hotel-principal/index.php`
 
 5. Credenciais e dados iniciais (estado atual):
-  - O seed atual (`hotel_reservas.sql`) inclui apenas 1 usuário admin:
-    - Email: `admin@essentia.com`
   - A tela de login já vem preenchida para testes com:
     - Email: `admin@essentia.com`
     - Senha: `admin`
-  - O backend está com senha mestre de desenvolvimento em `controllers/processarLogin.php`:
-    - `SENHA_MESTRE_DEMO = 'admin'`
-
-6. Observação de segurança:
-  - Antes de publicar em produção, remova a senha mestre de desenvolvimento e use somente autenticação por hash (`password_hash` / `password_verify`).
-
-## 🚀 Deploy Estático (Vercel e GitHub Pages)
-
-Para publicar apenas a landing page (sem backend PHP/MySQL), use a versão pronta em `docs/`.
-
-- Arquivo principal estático: `docs/index.html`
-- Assets estáticos: `docs/assets`, `docs/img`, `docs/scripit.js`
-- Configuração Vercel já incluída em `vercel.json` (redireciona para `docs/`)
-
-### GitHub Pages
-1. Acesse `Settings > Pages` no repositório.
-2. Em `Build and deployment`, selecione:
-   - Branch: `main` (ou a sua branch principal)
-   - Folder: `/docs`
-3. Salve e aguarde a URL pública.
-
-### Vercel
-1. Importe o repositório na Vercel.
-2. Mantenha as configurações padrão.
-3. Deploy.
 
 > A versão estática é de demonstração e não grava dados de reserva.
+> https://landing-page-hotel-alpha.vercel.app/
+> <img width="3024" height="6849" alt="home-hotel" src="https://github.com/user-attachments/assets/76671125-fb29-40ca-858e-0e5746041923" />
+
