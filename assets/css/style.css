@@ -600,7 +600,7 @@ label {
 }
 
 .acomodacao-border {
-  width: 370px;
+  width: 400px;
   height: 260px;
   position: relative;
   z-index: 1;
@@ -608,7 +608,7 @@ label {
 
 .acomodacao-img {
   z-index: 2;
-  width: 370px;
+  width: 400px;
   height: 260px;
 }
 
@@ -670,7 +670,7 @@ label {
   background: #c19b76;
   color: #fff;
   border: none;
-  padding: 12px 32px;
+  padding: 12px 20px;
   font-size: 14px;
   font-family: Roboto, sans-serif;
   font-weight: 500;
